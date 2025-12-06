@@ -1,0 +1,19 @@
+# Spring Boot / Gradle
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+bin/
+
+# Next.js / Node
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.iml

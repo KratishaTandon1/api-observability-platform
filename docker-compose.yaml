@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # 1. Primary DB: Stores the massive API Logs
+  mongo-logs:
+    image: mongo:latest
+    container_name: collector-logs-db
+    ports:
+      - "27017:27017" # Standard Mongo Port
+    volumes:
+      - logs_data:/data/db
+
+  # 2. Secondary DB: Stores Metadata (Users, Issues, Configs)
+  mongo-metadata:
+    image: mongo:latest
+    container_name: collector-metadata-db
+    ports:
+      - "27018:27017" # Maps port 27018 on your PC to Mongo
+    volumes:
+      - metadata_data:/data/db
+
+volumes:
+  logs_data:
+  metadata_data:

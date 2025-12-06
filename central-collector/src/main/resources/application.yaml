@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: central-collector
+  
+  # STRICT DUAL DB SETUP
+  data:
+    mongodb:
+      primary:
+        # Connects to the 'mongo-logs' container on port 27017
+        uri: mongodb://localhost:27017/logs_db
+      secondary:
+        # Connects to the 'mongo-metadata' container on port 27018
+        uri: mongodb://localhost:27018/metadata_db
+
+logging:
+  level:
+    root: INFO
